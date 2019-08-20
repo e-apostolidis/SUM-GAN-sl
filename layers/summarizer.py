@@ -3,8 +3,7 @@ import torch
 import torch.nn as nn
 from torch.autograd import Variable
 
-from .lstmcell import StackedLSTMCell
-
+from layers.lstmcell import StackedLSTMCell
 
 class sLSTM(nn.Module):
     def __init__(self, input_size, hidden_size, num_layers=2):
@@ -19,7 +18,7 @@ class sLSTM(nn.Module):
     def forward(self, features, init_hidden=None):
         """
         Args:
-            features: [seq_len, 1, 100] (compressed pool5 features)
+            features: [seq_len, 1, 500] (compressed pool5 features)
         Return:
             scores [seq_len, 1]
         """
@@ -60,7 +59,7 @@ class eLSTM(nn.Module):
 
 
 class dLSTM(nn.Module):
-    def __init__(self, input_size=2048, hidden_size=2048, num_layers=2):
+    def __init__(self, input_size=500, hidden_size=500, num_layers=2):
         """Decoder LSTM"""
         super().__init__()
 
@@ -88,8 +87,8 @@ class dLSTM(nn.Module):
         for i in range(seq_len):
             # last_h: [1, hidden_size] (h from last layer)
             # last_c: [1, hidden_size] (c from last layer)
-            # h: [2=num_layers, 1, hidden_size] (h from all layers)
-            # c: [2=num_layers, 1, hidden_size] (c from all layers)
+            # h: [num_layers=2, 1, hidden_size] (h from all layers)
+            # c: [num_layers=2, 1, hidden_size] (c from all layers)
             (last_h, last_c), (h, c) = self.lstm_cell(x, (h, c))
             x = self.out(last_h)
             out_features.append(last_h)
@@ -126,8 +125,9 @@ class VAE(nn.Module):
         Args:
             features: [seq_len, 1, hidden_size]
         Return:
-            h: [2=num_layers, 1, hidden_size]
-            decoded_features: [seq_len, 1, 2048]
+            h_mu: [num_layers=2, hidden_size]
+            h_log_variance: [num_layers=2, hidden_size]
+            decoded_features: [seq_len, 1, hidden_size]
         """
         seq_len = features.size(0)
 
@@ -160,17 +160,23 @@ class Summarizer(nn.Module):
         self.s_lstm = sLSTM(input_size, hidden_size, num_layers)
         self.vae = VAE(input_size, hidden_size, num_layers)
 
-    def forward(self, image_features, uniform=False):
-        # Apply weights
-        if not uniform:
-            # [seq_len, 1]
-            scores = self.s_lstm(image_features)
+    def forward(self, image_features):
+        """
+        Args:
+            image_features: [seq_len, 1, hidden_size]
+        Return:
+            scores: [seq_len, 1]
+            h_mu: [num_layers=2, hidden_size]
+            h_log_variance: [num_layers=2, hidden_size]
+            decoded_features: [seq_len, 1, hidden_size]
+        """
 
-            # [seq_len, 1, hidden_size]
-            weighted_features = image_features * scores.view(-1, 1, 1)
-        else:
-            scores = None
-            weighted_features = image_features
+        # Apply weights
+        # [seq_len, 1]
+        scores = self.s_lstm(image_features)
+
+        # [seq_len, 1, hidden_size]
+        weighted_features = image_features * scores.view(-1, 1, 1)
 
         h_mu, h_log_variance, decoded_features = self.vae(weighted_features)
 

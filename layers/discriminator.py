@@ -18,8 +18,8 @@ class cLSTM(nn.Module):
         """
         self.lstm.flatten_parameters()
 
-        # output: seq_len, batch, hidden_size * num_directions
-        # h_n, c_n: num_layers * num_directions, batch_size, hidden_size
+        # output: [seq_len, batch, hidden_size * num_directions]
+        # h_n, c_n: [num_layers * num_directions, batch_size, hidden_size]
         output, (h_n, c_n) = self.lstm(features, init_hidden)
 
         # [batch_size, hidden_size]
@@ -44,7 +44,7 @@ class Discriminator(nn.Module):
         Return:
             h : [1, hidden_size]
                 Last h from top layer of discriminator
-            prob: [1=batch_size, 1]
+            prob: [batch_size=1, 1]
                 Probability to be original feature from CNN
         """
 
