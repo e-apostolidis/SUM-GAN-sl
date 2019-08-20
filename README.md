@@ -10,6 +10,7 @@
 
 ## Data
 Structured h5 files with the annotations of the SumMe and TVSum datasets are available within the "data" folder. The h5 files were obtained from https://github.com/KaiyangZhou/pytorch-vsumm-reinforce and have the following structure:
+
 /key
     /features                 2D-array with shape (n_steps, feature-dimension)
     /gtscore                  1D-array with shape (n_steps), stores ground truth improtance score (used for training, e.g. regression loss)
