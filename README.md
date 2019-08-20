@@ -10,7 +10,7 @@
 
 ## Data
 Structured h5 files with the annotations of the SumMe and TVSum datasets are available within the "data" folder. The h5 files were obtained from https://github.com/KaiyangZhou/pytorch-vsumm-reinforce and have the following structure:
-
+<pre>
 /key
     /features                 2D-array with shape (n_steps, feature-dimension)
     /gtscore                  1D-array with shape (n_steps), stores ground truth improtance score (used for training, e.g. regression loss)
@@ -22,7 +22,7 @@ Structured h5 files with the annotations of the SumMe and TVSum datasets are ava
     /n_steps                  number of subsampled frames
     /gtsummary                1D-array with shape (n_steps), ground truth summary provided by user (used for training, e.g. maximum likelihood)
     /video_name (optional)    original video name, only available for SumMe dataset
-
+</pre>
 Original videos and annotations for each dataset are also available in the authors' project webpages:
 - TVSum dataset: https://github.com/yalesong/tvsum
 - SumMe dataset: https://gyglim.github.io/me/vsum/index.html#benchmark
