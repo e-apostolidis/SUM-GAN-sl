@@ -38,14 +38,14 @@ For N-fold cross validation, create training / testing splits of the data using 
 </pre>
 ## Training
 For training the model using a single split, run:
-
-  python main.py --split_index N (with N being the index of the split)
-  
+<pre>
+python main.py --split_index N (with N being the index of the split)
+</pre>
 Alternatively, to train the model for N splits, use the 'run_splits.sh' script according to the following:
-  
-  chmod +x run_splits.sh    # Makes the script executable.
-  ./run_splits              # Runs the script.  
-
+<pre>  
+chmod +x run_splits.sh    # Makes the script executable.
+./run_splits              # Runs the script.  
+</pre>
 Please note that after each training epoch the algorithm performs an evaluation step, and uses the trained model to compute the importance scores for the frames of each test video. These scores are then used by the provided evaluation scripts to assess the overal performance of the model (in F-Score).
 
 The progress of the training can be monitored via the TensorBoard platform and by:
@@ -59,17 +59,18 @@ Setup for the training process:
 - On 'configs.py', define the directory where the models will be saved to.
     
 Arguments in 'configs.py': 
-- --video_type: The used dataset for training the model. Can be either 'TVSum' or 'SumMe'.
-- --input_size: The size of the input feature vectors (1024 for GoogLeNet features).
-- --hidden_size: The hidden size of the LSTM units.
-- --num_layers: The number of layers of each LSTM network.
-- --regularization_factor: The value of the reguralization factor (ranges from 0.0 to 1.0).
-- --n_epochs: Number of training epochs.
-- --clip: The gradient clipping parameter.
-- --lr: Learning rate.
-- --discriminator_lr: Discriminator's learning rate.
-- --split_index: The index of the current split.
-
+<pre>
+--video_type: The used dataset for training the model. Can be either 'TVSum' or 'SumMe'.
+--input_size: The size of the input feature vectors (1024 for GoogLeNet features).
+--hidden_size: The hidden size of the LSTM units.
+--num_layers: The number of layers of each LSTM network.
+--regularization_factor: The value of the reguralization factor (ranges from 0.0 to 1.0).
+--n_epochs: Number of training epochs.
+--clip: The gradient clipping parameter.
+--lr: Learning rate.
+--discriminator_lr: Discriminator's learning rate.
+--split_index: The index of the current split.
+</pre>
 ## Evaluation
 To evaluate the models using the computed importance scores for each test video and after each training epoch, run the 'check_fscores_summe.py' and 'check_fscores_tvsum.py' scripts, after specifying: a) the path to the folder where the json files with the analysis results (i.e. frame-level importance scores) are stored, and b) the path to the h5 files of the datasets.
 
