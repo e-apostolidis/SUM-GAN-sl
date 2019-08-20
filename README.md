@@ -1,12 +1,12 @@
 # Stepwise, Label-based Adversarial Training for Unsupervised Video Summarization
 
 ## PyTorch Implementation of SUM-GAN-sl
-- from ["A Stepwise, Label-based Approach for Improving the Adversarial Training in Unsupervised Video Summarization" (to appear in the 1st Int. Workshop on AI for Smart TV Content Production, Access and Delivery (AI4TV '19) at ACM Multimedia (ACM MM) 2019, October 21, 2019, Nice, France)]
+- from "A Stepwise, Label-based Approach for Improving the Adversarial Training in Unsupervised Video Summarization" (to appear in the 1st Int. Workshop on AI for Smart TV Content Production, Access and Delivery (AI4TV '19) at ACM Multimedia (ACM MM) 2019, October 21, 2019, Nice, France)
 - by E. Apostolidis, A. I. Metsai, E. Adamantidou, V. Mezaris, I. Patras
 
 ## Main dependencies
-  Python  3.6
-  PyTorch 1.0.1
+- Python  3.6
+- PyTorch 1.0.1
 
 ## Data
 Structured h5 files with the annotations of the SumMe and TVSum datasets are available within the "data" folder. The h5 files were obtained from https://github.com/KaiyangZhou/pytorch-vsumm-reinforce and have the following structure:
