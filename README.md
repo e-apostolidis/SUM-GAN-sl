@@ -42,7 +42,7 @@ For training the model using a single split, run:
 python main.py --split_index N (with N being the index of the split)
 </pre>
 Alternatively, to train the model for N splits, use the 'run_splits.sh' script according to the following:
-<pre>  
+<pre>
 chmod +x run_splits.sh    # Makes the script executable.
 ./run_splits              # Runs the script.  
 </pre>
