@@ -29,12 +29,13 @@ Original videos and annotations for each dataset are also available in the autho
 
 ## Data Preparation
 For N-fold cross validation, create training / testing splits of the data using 'create_split.py'. To run this script, please set the arguments below:
-- --dataset: Path to the h5 file of the dataset.
-- --save-dir: Path to save the output json file with the created splits.
-- --save-name: Name to save the output json file, excluding the extension.
-- --num-splits: Number of splits to generate (5 in our case).
-- --train-percent: Percentage of data that will be used for training (80% in our case).
-
+<pre>
+--dataset: Path to the h5 file of the dataset.
+--save-dir: Path to save the output json file with the created splits.
+--save-name: Name to save the output json file, excluding the extension.
+--num-splits: Number of splits to generate (5 in our case).
+--train-percent: Percentage of data that will be used for training (80% in our case).
+</pre>
 ## Training
 For training the model using a single split, run:
 
