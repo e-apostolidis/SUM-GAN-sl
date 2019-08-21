@@ -18,7 +18,7 @@ Structured h5 files with the video features and annotations of the SumMe and TVS
     /change_points            2D-array with shape (num_segments, 2), each row stores indices of a segment
     /n_frame_per_seg          1D-array with shape (num_segments), indicates number of frames in each segment
     /n_frames                 number of frames in original video
-    /picks                    posotions of subsampled frames in original video
+    /picks                    positions of subsampled frames in original video
     /n_steps                  number of subsampled frames
     /gtsummary                1D-array with shape (n_steps), ground truth summary provided by user (used for training, e.g. maximum likelihood)
     /video_name (optional)    original video name, only available for SumMe dataset
