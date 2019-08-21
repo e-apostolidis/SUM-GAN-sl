@@ -9,7 +9,7 @@
 - PyTorch 1.0.1
 
 ## Data
-Structured h5 files with the annotations of the SumMe and TVSum datasets are available within the "data" folder. The h5 files were obtained from [Kaiyang Zhou](https://github.com/KaiyangZhou/pytorch-vsumm-reinforce) and have the following structure:
+Structured h5 files with the video features and annotations of the SumMe and TVSum datasets are available within the "data" folder. The GoogleNet features of the video frames were extracted by [Ke Zhang](https://github.com/kezhang-cs) and [Wei-Lun Chao](https://github.com/pujols) and the h5 files were obtained from [Kaiyang Zhou](https://github.com/KaiyangZhou/pytorch-vsumm-reinforce). These files have the following structure:
 <pre>
 /key
     /features                 2D-array with shape (n_steps, feature-dimension)
@@ -91,4 +91,4 @@ Copyright (c) 2019, Evlampios Apostolidis, Alexandros I. Metsai, Eleni Adamantid
 This software is provided by the authors "as is" and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall the authors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.
 
 ## Acknowledgement
-This work was supported by the European Union Horizon 2020 research and innovation programme under contract H2020-780656 ReTV. We would also like to thank [Jaemin Cho](https://github.com/j-min) for providing the PyTorch implementation of a variation of the SUM-GAN model, [Ke Zhang](https://github.com/kezhang-cs) and [Wei-Lun Chao](https://github.com/pujols) for providing the GoogleNet features of the video frames, and [Kaiyang Zhou](https://github.com/KaiyangZhou/pytorch-vsumm-reinforce) for providing the .h5 files of the SumMe and TVSum datasets.
+This work was supported by the European Union Horizon 2020 research and innovation programme under contract H2020-780656 ReTV.
