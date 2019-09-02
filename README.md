@@ -8,7 +8,7 @@
 
 ## Main dependencies
 - Python  3.6
-- PyTorch 1.0
+- PyTorch 1.0.1
 
 ## Data
 Structured h5 files with the video features and annotations of the SumMe and TVSum datasets are available within the "data" folder. The GoogleNet features of the video frames were extracted by [Ke Zhang](https://github.com/kezhang-cs) and [Wei-Lun Chao](https://github.com/pujols) and the h5 files were obtained from [Kaiyang Zhou](https://github.com/KaiyangZhou/pytorch-vsumm-reinforce). These files have the following structure:
