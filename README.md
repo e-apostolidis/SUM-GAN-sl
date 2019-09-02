@@ -52,7 +52,7 @@ Please note that after each training epoch the algorithm performs an evaluation 
 
 The progress of the training can be monitored via the TensorBoard platform and by:
 - opening a command line (cmd) and running: tensorboard --logdir=/path/to/log-directory --host=localhost
-- opening a browser and pasting the returned link from cmd
+- opening a browser and pasting the returned URL from cmd
 
 ## Configurations
 Setup for the training process:
