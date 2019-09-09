@@ -28,7 +28,7 @@ class VideoData(Dataset):
             for split in data:
                 temp['train_keys'] = split['train_keys']
                 temp['test_keys'] = split['test_keys']
-                self.splits.append(temp)
+                self.splits.append(temp.copy())
 
     def __len__(self):
         self.len = len(self.splits[0][self.mode+'_keys'])
