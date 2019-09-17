@@ -30,7 +30,7 @@ Original videos and annotations for each dataset are also available in the autho
 - SumMe dataset: https://gyglim.github.io/me/vsum/index.html#benchmark
 
 ## Training
-To train the model using one of the aforementioned datasets and for a number of randomly created splits of the dataset (where in each split 80% of the data is used for training and 20% for testing) use the corresponding <dataset_name>\_splits.json file that is included in the "data/splits" directory. This file contains the 5 randomly generated splits that were utilized in our experiments.
+To train the model using one of the aforementioned datasets and for a number of randomly created splits of the dataset (where in each split 80% of the data is used for training and 20% for testing) use the corresponding JSON file that is included in the "data/splits" directory. This file contains the 5 randomly generated splits that were utilized in our experiments.
 
 For training the model using a single split, run:
 <pre>
