@@ -30,12 +30,12 @@ def generate_summary(all_shot_bound, all_scores, all_nframes, all_positions):
             shot_lengths.append(shot[1]-shot[0]+1)
             shot_imp_scores.append((frame_scores[shot[0]:shot[1]+1].mean()).item())
 	
-	    # Select the best shots using the knapsack implementation
+	# Select the best shots using the knapsack implementation
         final_max_length = int((shot[1]+1)*0.15)
 
         selected = knapSack(final_max_length, shot_lengths, shot_imp_scores, len(shot_lengths))
 		
-	    # Select one frame from each selected shot, the one with the bigger score
+	# Select all frames from each selected shot (by setting their value in the summary vector to 1)
         summary = np.zeros(shot[1]+1, dtype=np.int8)
         for shot in selected:
             summary[shot_bound[shot][0]:shot_bound[shot][1]+1] = 1
