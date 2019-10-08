@@ -28,6 +28,7 @@ for epoch in results:
     with h5py.File(PATH_SumMe, 'r') as hdf:
         for video_name in keys:
             video_index = video_name[6:]
+            
             user_summary = np.array( hdf.get('video_'+video_index+'/user_summary') )
             sb = np.array( hdf.get('video_'+video_index+'/change_points') )
             n_frames = np.array( hdf.get('video_'+video_index+'/n_frames') )
