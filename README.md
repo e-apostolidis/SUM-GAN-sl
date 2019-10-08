@@ -66,6 +66,8 @@ Arguments in 'configs.py':
 --discriminator_lr: Discriminator's learning rate.
 --split_index: The index of the current split.
 </pre>
+For the parameters with no explicitly defined default values, please read the paper ("Implementation Details" section) or check the 'configs.py' file.
+
 ## Evaluation
 To evaluate the models using the computed importance scores for each test video and after each training epoch, run the 'check_fscores_summe.py' and 'check_fscores_tvsum.py' scripts, after specifying:
 <pre>
