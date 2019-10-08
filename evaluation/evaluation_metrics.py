@@ -23,4 +23,3 @@ def evaluate_summary(predicted_summary, user_summary, eval_method):
         return max(f_scores)
     else:
         return sum(f_scores)/len(f_scores)
-        
