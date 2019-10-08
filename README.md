@@ -69,11 +69,19 @@ Arguments in 'configs.py':
 For the parameters with no explicitly defined default values, please read the paper ("Implementation Details" section) or check the 'configs.py' file.
 
 ## Evaluation
-To evaluate the models using the computed importance scores for each test video and after each training epoch, run the 'check_fscores_summe.py' and 'check_fscores_tvsum.py' scripts, after specifying:
+__Using multiple human summaries:__ to evaluate the models by comparing, after each training epoch, the generated summary for each test video (based on the computed importance scores) against a set of multiple human summaries that are available for that video (see the '/user_summary' entry in the explanation of the h5 file structure in the **Data** section above), run the 'check_fscores_summe.py' and 'check_fscores_tvsum.py' scripts, after specifying:
 <pre>
 a) the path to the folder where the json files with the analysis results (i.e. frame-level importance scores) are stored
 b) the path to the h5 files of the datasets.
 </pre>
+
+__Using ground-truth summaries:__ to evaluate the models by comparing the generated summary for each test video (based on the computed importance scores) against a single groung-truth summary that is available for that video (see the '/gtscore' entry in the explanation of the h5 file structure in the **Data** section above), run the 'check_fscores_summe_with_gts.py' and 'check_fscores_tvsum_with_gts.py' scripts, after specifying:
+<pre>
+a) the path to the folder where the json files with the analysis results (i.e. frame-level importance scores) are stored
+b) the path to the h5 files of the datasets.
+</pre>
+This evaluation protocol is followed by a few approaches in the literature (which are explicitly mentioned in the paper), and these scripts enable the evaluation and fair comparison of the trained models' performance, against these methods as well.
+
 ## Citation
 If you find this code useful in your work, please cite the following publication:
 
