@@ -1,7 +1,7 @@
 # Stepwise, Label-based Adversarial Training for Unsupervised Video Summarization
 
 ## PyTorch Implementation of SUM-GAN-sl
-- From **"A Stepwise, Label-based Approach for Improving the Adversarial Training in Unsupervised Video Summarization"** (to appear in the 1st Int. Workshop on AI for Smart TV Content Production, Access and Delivery (AI4TV '19) at ACM Multimedia (ACM MM) 2019, October 21, 2019, Nice, France)
+- From **"A Stepwise, Label-based Approach for Improving the Adversarial Training in Unsupervised Video Summarization"** (1st Int. Workshop on AI for Smart TV Content Production, Access and Delivery (AI4TV '19) at ACM Multimedia (ACM MM) 2019, October 21, 2019, Nice, France)
 - Written by Evlampios Apostolidis, Alexandros I. Metsai, Eleni Adamantidou, Vasileios Mezaris and Ioannis Patras
 - Based on a PyTorch implementation of a variation of the SUM-GAN model, made by [Jaemin Cho](https://github.com/j-min)
 - This software can be used for training a GAN-based deep learning architecture for automatic video summarization. Training is performed in a fully unsupervised manner without the need for ground-truth data (such as human-generated video summaries). After being unsupervisingly trained on a collection of videos, the SUM-GAN-sl model is capable of producing representative summaries for unseen videos, according to a user-specified time-budget about the summary duration.
