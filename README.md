@@ -86,6 +86,8 @@ If you find this code useful in your work, please cite the following publication
 
 E. Apostolidis, A. I. Metsai, E. Adamantidou, V. Mezaris, I. Patras. **"A Stepwise, Label-based Approach for Improving the Adversarial Training in Unsupervised Video Summarization".** Proc. 1st Int. Workshop on AI for Smart TV Content Production, Access and Delivery (AI4TV '19) at ACM Multimedia (ACM MM) 2019, October 21, 2019, Nice, France
 
+DOI: https://doi.org/10.1145/3343031.3350549
+
 ## License
 Copyright (c) 2019, Evlampios Apostolidis, Alexandros I. Metsai, Eleni Adamantidou, Vasileios Mezaris, Ioannis Patras / CERTH-ITI. All rights reserved. This code is provided for academic, non-commercial use only. Redistribution and use in source and binary forms, with or without modification, are permitted for academic non-commercial use provided that the following conditions are met:
 
